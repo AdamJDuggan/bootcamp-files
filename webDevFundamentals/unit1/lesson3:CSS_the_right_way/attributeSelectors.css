@@ -1,0 +1,7 @@
+img {
+  width: 300px;
+}
+
+img[src*="cat"]{
+  transform: rotate(180deg);
+}

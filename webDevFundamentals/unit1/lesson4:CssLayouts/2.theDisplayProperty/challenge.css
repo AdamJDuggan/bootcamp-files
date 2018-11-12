@@ -1,0 +1,115 @@
+body{
+ box-sizing: border-box;   
+}
+
+.container{
+    width: 95%;
+    height: 100%;
+}
+
+/* The navigation bar */
+
+.navbar {
+    overflow: hidden;
+    background-color: grey;
+    position: fixed; /* Stay */
+    top: 0; /* Top of the page */
+    width: 100%; /* Across whole screen */
+    text-decoration: none;
+
+}
+
+nav li{
+    list-style-type: none;
+    
+}
+
+/* Navbar items */
+.navbar a { 
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.homeIcon{
+    float: left;
+    color: black;
+
+}
+.navMenu{
+    float: right;
+    color: purple;
+    text-decoration: none;
+}
+
+.searchArea{
+    margin-top: 200px;
+    width: 100%;
+}
+
+.searchFlex{
+    width: 30%;
+    margin-left: 25%
+}
+
+.searchJobsText{
+    font-size: 1.2rem;
+    margin-bottom: 200px;    
+}
+
+input{
+    height: 2rem;
+}
+
+
+/* PAGINATOR STARTS */
+pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    margin-top: 20px;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+
+
+.table{
+    margin-top: 100px;
+    width: 150%;
+    padding: 20px;
+    text-align: left;
+}
+
+.date, .title, .town{
+    padding: 10px;
+    margin: 10px;
+}
+
+.date, .town{
+    color: grey;
+    font-size: 1.5rem;
+}
+
+.title{
+    color: blue;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+

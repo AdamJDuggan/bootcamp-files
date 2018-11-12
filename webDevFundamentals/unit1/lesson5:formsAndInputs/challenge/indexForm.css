@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  background-color: blue;
+}
+
+* + * {
+  margin-top: 1rem;
+}
+
+html {
+  font: 100%/1.25 'Roboto', helvetica, sans-serif;
+}
+
+body {
+  padding-left: 1.8rem;
+}
+
+.header{
+  margin-top: 50px;
+  display: flex; 
+  justify-content: center;
+  height: 100px;
+  text-align: center;
+}
+
+img{
+  height: 35px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  width: 100%;  
+}
+
+.form-box{
+  justify-content: center;
+  padding: 10px;
+  width: 400px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: center;
+  background-color: white;
+
+}
+
+.sign-up{
+  font-size: 2rem;
+  text-align: center;
+  background-color: white;
+  color: darkgrey;
+}
+
+form > h2, label, input, button{
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+form > input, button, .password{
+  width: 320px;
+  border: 2px solid black;
+  height: 55px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+
+button{
+  background-color: lightgreen;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.password-label{
+  margin-top: 10px;
+}
+
+
+

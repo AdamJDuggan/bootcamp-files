@@ -1,0 +1,36 @@
+body * {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Your styles go here! */
+
+.container{
+    width: 800px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.top-container{
+    height: 40%;
+    width: 100%;
+}
+
+.bottom-container{
+    height: 60%;
+    width: 100%;
+}
+
+.top1{
+    width: 50%;
+    background-color: green;
+}
+
+.top2{
+    width: 50%;
+    background-color: blue;   
+}
