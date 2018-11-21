@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>jquery hello world</title>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <link href="index.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <input type="text" placeholder="Type here">
+      <button type="button">Click me</button>
+      <div class="output"></div>
+      <script>
+    // This code tells the browser to wait until the page loads, then listen for 
+    // when a user clicks on any button element or presses a key in any input element. 
+    // When one of those happens, you run a callback function (i.e., the blocks of 
+    // behavior we define below). When the user clicks or types a key, the browser 
+    // generates some data about the click event. The object representing that data is 
+    // the event you see in function(event)
+    $(function() {
+    $('button').mousedown(event =>
+    $('.output').text(`Button clicked: ${event.which}`)
+    );
+
+    $('input').keydown(event =>
+    $('.output').text(`Key pressed: ${event.key}`)
+    );
+    });
+      </script>
+    </body>
+</html>

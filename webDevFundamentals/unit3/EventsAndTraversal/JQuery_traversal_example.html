@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>jquery hello world</title>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <link href="index.css" rel="stylesheet" type="text/css" />
+        <style>
+        .hidden {
+        display: none;
+        }
+
+        .complete {
+        text-decoration: line-through;
+        }
+        </style>
+    </head>
+    
+    <body>
+      <div class='hidden js-parent-demo'>
+        <ul class='js-to-dos'>
+          <li class="js-complete">Buy milk</li>
+          <li>mail rent check</li>
+          <li>write great american novel</li>
+        </ul>
+      </div>
+      <script>      
+      function doIt() {
+        const toDos = $('.js-to-dos');
+
+        // this will grab the first parent of toDos that has the `.js-parent-demo`
+        // class
+        toDos.parent('.js-parent-demo').removeClass('hidden');
+        // this will look at all children of toDos that have the `.js-complete class`
+        toDos.find('.js-complete').addClass('complete');
+        }
+        doIt();
+      </script>
+    </body>
+</html>

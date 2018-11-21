@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>`this` example</title>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <link href="index.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+      <h2>this is how <code>this</code> works</h2>
+      <div class="foo">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <ul>
+          <li>fee</li>
+          <li>fie</li>
+          <li>foh</li>
+          <li>fum</li>
+        </ul>
+      </div>
+      <script>
+        $(function() {
+        $(".foo, p, ul, li").click(function(event) {
+        event.stopPropagation();
+        $("h2").text(`\`this\`'s text is: ${$(this).text()}`);
+        });
+        });
+      </script>
+    </body>
+</html>
