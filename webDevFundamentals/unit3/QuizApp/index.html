@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Miriam+Libre" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="normalize.css"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+crossorigin="anonymous">
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<title>JQuery Quiz App</title>
+</head>
+
+<body>
+<!-- Header -->
+<div role="header" class="jumbotron bg-dark text-light mb-4">
+<h1 class="text-center font-weight-bold display-3">Isaac's Football Quiz!</h1>
+</div>
+
+<!-- Collapsable welcome area -->
+<div class="row mt-4 welcome-area">
+<div class="col-md-4">
+  <div class="card text-center px-4 border-0">
+      <div class="card-body">
+          <img class="card-img-top" src="isaac.jpeg" alt="Image of my son Isaac in his football kit">
+      </div>
+  </div>
+</div>
+
+<div class="col-md-8 px-4 my-4 mb-3">
+<h1 class="mb-3">Isaac, there are 10 football questions to answer</h1>
+<h3 class="mb-3">You win the game if you get 7 or more of the questions correct</h3>
+<a href="#" role="button" class="btn btn-secondary display-4 mb-3 beginBtn">Click to begin the game!</a>
+</div>
+</div>
+<!-- End of welcome area -->
+
+<!-- START OF OUTER QUIZ CONTAINER  -->
+<div class="row mt-4 text-center quiz" style="display: none;" >
+
+<!-- STARTER TEST HARDCODED HTML  -->
+<!-- <form class="container-fluid text-center mt-3 mx-4 quizItem" value="">
+  <h3 value="">How many teams are there in the Preimership?</h3>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="rbnNumber" value="a" id="a">
+    <label class="form-check-label" for="inlineRadio1">A. 10</label>
+  </div><br>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="rbnNumber" value="b" id="b">
+    <label class="form-check-label" for="inlineRadio2">B.  15</label>
+  </div><br>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="rbnNumber" value="c" id="c">
+    <label class="form-check-label" for="inlineRadio3">C.  20</label>
+  </div><br>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="rbnNumber" value="d" id="d">
+    <label class="form-check-label" for="inlineRadio4">D.  25</label>
+  </div><br>
+      <button class="btn btn-secondary mt-4 mb-4 submitAnswer">Submit answer</button>                
+</form>
+<hr> -->
+
+<!-- THIS IS WHERE EACH QUESTION WILL JUMP INTO THE DOM FROM JS FILE -->
+<div class="container-fluid text-center test"></div>
+<div class="questionDiv">
+</div>
+
+<!-- END OF FULL QUIZ CONTAINER -->
+</div> 
+
+
+
+
+<!-- START OF FINISHING PAGE -->
+<div class="jumbotron mt-4 text-center final-page" style="display: none">
+<h1>Isaac your score was: <strong style="color: red">{}</strong></h1>
+<button class="btn btn-secondary text-center mt-4 reset">Reset game</button>       
+</div>
+<!-- END OF FINISHING PAGE -->
+
+
+<script src="script.js"></script>
+</body>
+</html>
