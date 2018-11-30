@@ -198,6 +198,8 @@ d: '26'
 
 ];
 
+const myCorrectAnswers = ['c', 'd', 'b', 'b', 'a', 'd', 'b', 'a', 'd', 'a']
+
 
 // Button which closes welcome panel and opens up the quiz form-  WORKING 
 function startGame(){
@@ -251,14 +253,15 @@ function submitAnswer(){
  }
 
 //here I want to iterate through the questions and forEach input into the questionDiv HTML
-function getDataFromQuestions(){
-  for(let q = 0; q < myQuestions.length; q++){
-    $('.questionDiv').html
-    (`<div class="container-fluid text-center questionDiv" >
-      <h3>${q}</h3>
-      </div>`)
-  }
-}
+// function getDataFromQuestions(){
+//   return 
+//   for(let q = 0; q < myQuestions.length; q++){
+//     $('.questionDiv').html
+//     (`<div class="container-fluid text-center questionDiv" >
+//       <h3>${q}</h3>
+//       </div>`)
+//   }
+// }
 
 
 

@@ -20,12 +20,12 @@ crossorigin="anonymous">
 
 <body>
 <!-- Header -->
-<div role="header" class="jumbotron bg-info text-light mb-4">
+<div role="banner" class="jumbotron bg-info text-light mb-4">
 <h1 class="text-center font-weight-bold display-3">Isaac's Football Quiz!</h1>
 </div>
 
 <!-- Collapsable welcome area -->
-<div class="row mt-4 welcome-area">
+<div role= "section" class="row mt-4 welcome-area">
 <div class="col-md-4">
   <div class="card text-center px-4 border-0">
       <div class="card-body">
@@ -43,15 +43,18 @@ crossorigin="anonymous">
 <!-- End of welcome area -->
 
 <!-- START OF OUTER QUIZ CONTAINER  -->
-<div class="row mt-4 text-center quiz" style="display: none;" >
+<div role="main" class="row mt-4 text-center quiz" style="display: none;" >
+
 <div class="container-fluid text-center test">
 <!-- THIS IS WHERE EACH QUESTION WILL JUMP INTO THE DOM FROM JS FILE -->
 </div>
+
 </div> <!-- END OF FULL QUIZ CONTAINER -->
 
 <!-- START OF FINISHING PAGE -->
 <div class="jumbotron mt-4 text-center final-page" style="display: none">
-<h1>Isaac your score was: <strong style="color: red">{}</strong></h1>
+  <h2 class="finalScoreTally"></h2>
+  <h2 class="endMessage"></h2>
 <button class="btn btn-secondary text-center mt-4 reset">Reset game</button>       
 </div>
 <!-- END OF FINISHING PAGE -->
