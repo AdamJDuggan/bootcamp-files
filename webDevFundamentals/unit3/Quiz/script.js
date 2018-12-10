@@ -1,5 +1,5 @@
 // QUIZ TEST 
-const myQuiz = 
+const myQuiz = adamjduggan
     [
       {question: "1. How many teams are there in the Preimership?",
         answers: {
@@ -145,6 +145,13 @@ function endQuiz(){
 }
 
 
+function allowSubmit(){
+  $('.quiz').on('click', '.form-check-input', function(event) {
+      $('.submitAnswer').show();
+  });
+}
+
+
 //On clicking the submit question button this will console.log which radio button was clicked and prevent the button 
 // being clicked again - WORKING 
 function submitAnswer(){    
@@ -211,7 +218,7 @@ function printOneQuestion(){
           <input class="form-check-input" type="radio" name="rbnNumber" value="d" id="d">
           <label class="form-check-label" for="inlineRadio4">D. ${currentItem.answers.d}</label>
         </div><br>
-            <button class="btn btn-secondary mt-4 mb-4 submitAnswer">Submit answer</button>
+            <button class="btn btn-secondary mt-4 mb-4 submitAnswer" type="button" style="display:none">Submit answer</button>
             <h3 class="text-center text-info answerText" style="display:none"></h3><br>         
             <h3 class="text-center text-info scoreTally" style="display:none"></h3><br>
             <button class="btn btn-secondary mt-4 mb-4 nextQuestion" style="display:none" >Next Question</button><br>        
@@ -240,11 +247,16 @@ function goToNextQ(){
 //My container function 
 function allFunctions(){
     startGame()
+    allowSubmit()
     submitAnswer()  
     printAllQuestions()
     goToNextQ()
     showFinalPage() 
-    endQuiz()
+    endQuiz()currentItem
   }
+  
 $(allFunctions);
 // --------------------------
+
+
+
