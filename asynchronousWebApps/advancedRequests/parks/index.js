@@ -37,10 +37,9 @@ function getParks(state, maxResults) {
 
 function displayResults(responseJson) {
   $('#results-list').empty();
-  let printData = JSON.stringify(responseJson);   
   for (let i = 0; i < responseJson.data.length; i++){
     $('#results-list').append(
-      `<li>
+      `<li class="card">
       <h3>${responseJson.data[i].fullName}</h3><br>
       <h3>${responseJson.data[i].description}</h3><br>
       <h3>${responseJson.data[i].url}</h3><br>

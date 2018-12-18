@@ -4,26 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>YouTube video finder</title>
+    <title>National Park Finder</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>YouTube video finder</h1>
+    <div class="jumbotron text-center">
+        <h1>Find National Parks near you</h1>
+    </div>
 
-        <form id="js-form">
-            <label for="search-term">Search term</label>
-            <input type="text" name="search-term" id="js-search-term" required>
+    <div class="container-fluid text-center">
+        <form class="form-inline m-4" id="js-form">
+            <label class="mb-2 mr-sm-2 mb-sm-0" for="search-term">Search using state code</label>
+            <input class=" form-control mb-4 mr-sm-2 mb-sm-0" type="text" name="search-term" id="js-search-term" required><br>
+            <label class="mb-2 mr-sm-2 mb-sm-0" for="max-results">Maximum results to return</label>
+            <input class=" form-control mb-2 mr-sm-2 mb-sm-0" type="number" name="max-results" id="js-max-results" value="10">
+            <input class="mb-2 mr-sm-2 mb-sm-0" type="submit" value="Go!">
+          </form>
 
-            <label for="max-results">Maximum results to return</label>
-            <input type="number" name="max-results" id="js-max-results" value="10">
-
-            <input type="submit" value="Go!">
-        </form>
-
+    </div>
+      
         <p id="js-error-message" class="error-message"></p>
-        <section id="results" class="hidden">
+        <section class="container-fluid" id="results" class="hidden">
           <h2>Search results</h2>
           <ul id="results-list">
           </ul>
