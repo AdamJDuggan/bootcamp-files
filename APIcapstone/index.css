@@ -1,19 +1,36 @@
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700");
-*{font-family: Ubuntu, sans-serif};
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
+*{font-family: Poppins, sans-serif};
 
 h1{
     font-weight: bold;
+    color: white;
 }
 
-.main-header{
-    background-color: darkorange;
+
+
+@media only screen and (max-width: 656px) {
+    .jumbotron {max-height: 300px;};
 }
+
+@media only screen and (max-width: 400px) {
+    .jumbotron {max-height: 200px;};
+}
+
+.jumbotron{
+    height: 650px;
+    background-image: url(football.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
 
 #leagueBtns{
     margin: 3rem;
 }
 
-img{
+button img{
     max-width: 100px;
     max-height: 100px;
 }

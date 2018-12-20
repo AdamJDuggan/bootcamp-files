@@ -1,12 +1,15 @@
 `use strict`
 
-let store = {}; 
-//this data (make your own HTML attribute- look at) 
+
+
+
+
+
 function chooseLeague() {
   $('#leagueBtns').on('click', '.leagueBtn', event => {
     event.preventDefault();
     let leagueId = event.target.dataset.league;
-    getData(leagueId, 'teams');
+    getData('PL', 'teams');
   })  
 };
 
@@ -32,6 +35,8 @@ function getData(league, targetData){
   };
 
 
+// --------------- CODE FOR TABLE -------------------------
+
 function displayTeams() {
   console.log('display teams called');
   $('#results').empty();
@@ -48,11 +53,8 @@ function displayTeams() {
 };
 
 
-
 $(chooseLeague());
 
 
-// function sortTeams(table){
 
-// }
-// $(sortTeams());
+

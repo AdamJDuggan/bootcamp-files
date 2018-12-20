@@ -9,28 +9,31 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="normalize.css">
 
 </head>
 <body>
 
-<div class="jumbotron text-center main-header">
-<h1>TEST Football stat master</h1>
+<div class="jumbotron text-center">
+<h1>Isaac's Football App</h1>
+<h3>Standings, news and fixtures for Europes top leagues</h3>
 </div>
 
 <!-- LEAGUE BUTTON SELECTION -->
 <section class="container-fluid text-center" id="leagueBtns">
-<button type="button" data-league="PL" class="btn btn-lg leagueBtn"> 
+<button type="button" data-league="PL" data-news="premier-league" class="btn btn-lg leagueBtn"> 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f2/Premier_League_Logo.svg/1920px-Premier_League_Logo.svg.png" alt="">
 </button>
-<button type="button" data-league="ELC" class="btn btn-lg leagueBtn"> 
+<button type="button" data-league="ELC" data-news="english-football-league" class="btn btn-lg leagueBtn"> 
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/English_Football_League_Logo.svg/1200px-English_Football_League_Logo.svg.png" alt="">
 </button>
-<button type="button" data-league="PD"class="btn btn-lg leagueBtn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/LaLiga.svg/1920px-LaLiga.svg.png" alt="">
+<button type="button" data-league="PD" data-news="la-liga" class="btn btn-lg leagueBtn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/LaLiga.svg/1920px-LaLiga.svg.png" alt="">
 </button>
-<button type="button" data-league="SA" class="btn btn-lg leagueBtn">
+<button type="button" data-league="SA" data-news="serie-a" class="btn btn-lg leagueBtn">
 <img src="https://upload.wikimedia.org/wikipedia/en/0/02/Serie_A_logo_%282018%29.png" alt="">
 </button>
-<button type="button" data-league="BL1" class="btn btn-lg leagueBtn">
+<button type="button" data-league="BL1" data-news="bundesliga" class="btn btn-lg leagueBtn">
 <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Bundesliga_logo_%282017%29.svg/800px-Bundesliga_logo_%282017%29.svg.png" alt="">
 </button>
 </section>
@@ -42,15 +45,15 @@
 <main class="main-section" style="display:none;">
 
 <section class="container-fluid text-center ">
-<a href="#table"><button type="button" role="button" class="btn btn-lg font-weight-bold">Standings</button></a>
-<a href="#news"></a><button type="button" aria-pressed="true" class="btn btn-lg">Latest News</button></a>
-<a href="#fixtures"></a><button type="button" aria-pressed="true" class="btn btn-lg">Fixtures</button></a>
+<a href="#getTable"><button type="button" role="button" class="btn btn-lg" id="getTable">Standings</button></a>
+<a href="#"></a><button type="button" aria-pressed="true" class="btn btn-lg" id="getNews">Latest News</button></a>
+<a href="#"></a><button type="button" aria-pressed="true" class="btn btn-lg" id="getFixtures">Fixtures</button></a>
 </section>
 <hr>  
 
 <!--TABLE -->
 
-<div class="container">
+<div class="container" id="containerTable">
 <div class="table-responsive">          
 <table id="table" class="table table-xs table-bordered text-start table-hover">
 <thead>
@@ -65,6 +68,7 @@
 <th>Against</th>
 <th>GD</th>
 <th>Points</th>
+<a href="#"></a>
 </tr>
 </thead>
 <tbody id="results"></tbody>
@@ -74,18 +78,28 @@
 <!-- END OF TABLE -->
 
 <!-- NEWS -->
-<section id="news"class="row text-center news">
+<div class="container" id="containerNews">
+        <h1>NEWS</h1>
+    <ul id="news"class="row text-center news">      
+    </ul>
+<hr>
+</div>
 
-</section>
-<!-- END OF TABLE -->
+<!-- END OF NEWS -->
 
+<div class="container" id="containerFixtures" style="display:none;">
+    <h1>FIXTURES</h1>
+    <section id="fixtures" class="row text-center">
+
+<hr>
+</div>
 
 
 
 <!-- END OF MAIN SECTION -->
 </main>
 
-<script src="test.js"></script>
+<script src="index2.js"></script>
 </body>
 </html>
 

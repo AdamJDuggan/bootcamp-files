@@ -1,0 +1,17 @@
+#jumbo{
+    background-image: url('football.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.img-is-center{
+    margin : 0 auto; 
+    text-align : center;
+    width: 80%; 
+    height: 1%;
+}
+
+#headingTitles{
+    margin-bottom: 30px;
+}
