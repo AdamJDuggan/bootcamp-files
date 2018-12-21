@@ -29,7 +29,7 @@ function getData(league){
 function displayTeams() {
   console.log('display teams called');
   $('#results').empty();
-  $('.main-section').show();
+  $('#main-section').show();
   
   for (let i = 0; i < store.table.length; i++){
     $('#results').append(
@@ -71,14 +71,28 @@ function displayNewsResults(responseNewsJson, maxResults) {
   $('#news').empty();
   for (let i = 0; i < responseNewsJson.articles.length & i<maxResults ; i++){
     $('#news').append(
-      `<li><h3><a href="${responseNewsJson.articles[i].url}">${responseNewsJson.articles[i].title}</a></h3>responseNewsJson.articles[i].urlToImage
-      <p>${responseNewsJson.articles[i].source.name}</p>
-      <p>By ${responseNewsJson.articles[i].author}</p>
-      <p>${responseNewsJson.articles[i].description}</p>
+
+      `<br>
+      <article class="media">
+      <figure class="media-left">
+      <p class="image is-128x128">
       <img src='${responseNewsJson.articles[i].urlToImage ? responseNewsJson.articles[i].urlToImage : 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Comic_image_missing.svg/948px-Comic_image_missing.svg.png'}'> 
-      </li>`
+      </p>
+      </figure>
+      <div class="media-content">
+      <div class="content">
+      <p>
+      <strong>${responseNewsJson.articles[i].title}</strong> 
+      <br>
+      <br>
+      ${responseNewsJson.articles[i].description}
+      </p>
+      </div>
+      </div>
+      </article>`
     )};
 };
+
 //Get the data
 function getNews(query, maxResults=5) {
   const params = {
@@ -154,11 +168,17 @@ function chooseLeague() {
     // let choosenLeagueNews = $(this).data('news');
     let choosenLeagueNews = $(event.currentTarget).data('news');   
 
-    getNews(choosenLeagueNews, maxResults = 5);
+    getNews(choosenLeagueNews, maxResults = 3);
     //Run fixtures 
     // getFixtures(leagueId, maxFixtures = 6);
   })  
 };
+
+// function movedown(){
+//   $('#leagueBtns').on('click', 'button', event => {
+//     event.preventDefault();
+    
+// }
 
 $(chooseLeague());
 
