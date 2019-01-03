@@ -10,6 +10,6 @@ Key learning point:
 At first the app worked in Firefox but not Chrome. I found out that google chrome requires 'event' in onClick arrow  functions (line 167 in the Javascript code) instead of an empty () =>. 
 
 Screenshots:
-![ScreenShot](https://raw.github.com/AdamJDuggan/bootcamp-files/master/final/App2.png})
+![](App2.png)
   
 
