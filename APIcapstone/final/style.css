@@ -1,42 +1,53 @@
-#jumbo{
+#jumbo {
     background-image: url('football.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
 }
 
-.img-is-center{
-    margin : 0 auto; 
-    text-align : center;
-    width: 80%; 
+.img-is-center {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
     height: 1%;
 }
 
-#headingTitles{
+#headingTitles {
     margin-bottom: 30px;
 }
 
-img{
+img {
     max-height: 100px;
     max-width: 100px;
 }
 
-.leagueBtn{
+.leagueBtn {
     border: none;
     background-color: none;
 }
 
-.leagueBtn:focus { outline: none; }
-
-.tabBtn{margin: 10px;}
-
-
-@media only screen and (max-width: 540px){
-    .colRm{display:none;}
+.leagueBtn:focus {
+    outline: none;
 }
 
-@media only screen and (max-width: 400px){
-    .wldColRm{display:none;}
+.tabBtn {
+    margin: 10px;
 }
 
-#team{display:none;};
+@media only screen and (max-width: 540px) {
+    .colRm {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .wldColRm {
+        display: none;
+    }
+}
+
+#team {
+    display: none;
+}
+
+;

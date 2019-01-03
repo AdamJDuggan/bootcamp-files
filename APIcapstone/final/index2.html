@@ -1,160 +1,163 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Football stat tracker</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-<link rel="stylesheet" href="style.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Football stat tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
+
 <body>
 
-<!-- JUMBOTRON HEADER -->
-<section role="banner" id="jumbo" class="hero is-primary is-bold is-large">
-<div class="hero-body">
-<div class="container has-text-centered">
-<h1 class="title is-1 is-spaced">
-FOOTBALL LATEST
-</h1>
-<h2 class="subtitle is-3 is-spaced">
-Uptodate standings, news and fixtures for Europe's top domestic leagues 
-</h2>
-</div>
-</div>
-</section>
+    <!-- JUMBOTRON HEADER -->
+    <section role="welcome banner" id="jumbo" class="hero is-primary is-bold is-large">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-1 is-spaced">
+                    FOOTBALL LATEST
+                </h1>
+                <h2 class="subtitle is-3 is-spaced">
+                    Uptodate standings, news and fixtures for Europe's top domestic leagues
+                </h2>
+            </div>
+        </div>
+    </section>
 
 
-<!-- LEAGUE BUTTONS -->
-<section role="select league" class="hero is-info">
-<div class="hero-body">
-<div class="container">
-<h2 class="title is-2 is-spaced ">
-Choose a league
-</h2>
-<div class="buttons are-large" id="leagueBtns">
-<button type="button" data-league="PL" data-news="premier-league" class="button leagueBtn">Premier League</button>
-<button type="button" data-league="ELC" data-news="english-football-league" class="button leagueBtn">English Football League</button>
-<button type="button" data-league="PD" data-news="la-liga" class="button leagueBtn">La Liga</button>
-<button type="button" data-league="SA" data-news="serie-a" class="button leagueBtn">Seria A</button>
-<button type="button" data-league="BL1" data-news="bundesliga" class="button leagueBtn">Bundesliga</button>
+    <!-- LEAGUE BUTTONS -->
+    <section role="select league" class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title is-2 is-spaced ">
+                    Choose a league
+                </h2>
+                <div class="buttons are-large" id="leagueBtns">
+                    <button type="button" data-league="PL" data-news="premier-league" class="button leagueBtn">Premier
+                        League</button>
+                    <button type="button" data-league="ELC" data-news="english-football-league" class="button leagueBtn">English
+                        Football League</button>
+                    <button type="button" data-league="PD" data-news="la-liga" class="button leagueBtn">La Liga</button>
+                    <button type="button" data-league="SA" data-news="serie-a" class="button leagueBtn">Seria A</button>
+                    <button type="button" data-league="BL1" data-news="bundesliga" class="button leagueBtn">Bundesliga</button>
 
-</div>
-</div>
-</section>
-
-
-<!-- MAIN SECTION WHICH DISPLAYS RETURNED CONTENT -->
-<main id="main-section" style="display:none;">
-
-<!-- JUMP TO PARTS OF SCREEN -->
-<section role="section" class="hero is-light">
-<div class="hero-body" id="topOfOptions" >
-<div class="container">
-<a href="#topOfTable" class="button is-large is-success is-spaced tabBtn">Table</a>
-<a href="#topOfNews" class="button is-large is-warning  tabBtn">News</a>
-<a href="#topOfFixtures" class="button is-large is-danger tabBtn">Fixtures</a>
-</div>
-</div>
-</section>    
-
-<!-- START OF TABLE -->
-<section role="table" class="hero is-success">
-<div class="hero-body" id="topOfTable">
-<div class="container">
-<h1 class="title is-2 is-spaced" id="headingTitles">Table</h1>
-<table class="table is-bordered is-narrow is-hoverable is-striped">
-<thead>
-<tr>
-<th><abbr title="Position">Pos</abbr></th>
-<th><abbr title="Team">Team</abbr></th>
-<th><abbr title="Played">Pld</abbr></th>
-<th class="wldColRm"><abbr title="Won">W</abbr></th>
-<th class="wldColRm"><abbr title="Drawn">D</abbr></th>
-<th class="wldColRm"><abbr title="Lost">L</abbr></th>
-<th class="colRm"><abbr title="Goals for">GF</abbr></th>
-<th class="colRm"><abbr title="Goals against">GA</abbr></th>
-<th class="colRm"><abbr title="Goal difference">GD</abbr></th>
-<th><abbr title="Points">Pts</abbr></th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<th><abbr title="Position">Pos</abbr></th>
-<th>Team</th>
-<th><abbr title="Played">Pld</abbr></th>
-<th class="wldColRm"><abbr title="Won">W</abbr></th>
-<th class="wldColRm"><abbr title="Drawn">D</abbr></th>
-<th class="wldColRm"><abbr title="Lost">L</abbr></th>
-<th class="colRm"><abbr title="Goals for">GF</abbr></th>
-<th class="colRm"><abbr title="Goals against">GA</abbr></th>
-<th class="colRm"><abbr title="Goal difference">GD</abbr></th>
-<th><abbr title="Points">Pts</abbr></th>
-</tr>
-</tfoot>
-<tbody id="results">
-
-</tbody>
-</table>
-</div>
-</div>
-</section>
+                </div>
+            </div>
+    </section>
 
 
-<!-- NEWS -->
-<section class="hero is-warning">
-<div class="hero-body" id="topOfNews">
-<div class="container">
-<h1 class="title is-2 is-spaced">Latest new stories</h1>
-<div id="news">      
-</div>
-</div>
-</div>
-</section>
+    <!-- MAIN SECTION WHICH DISPLAYS RETURNED CONTENT -->
+    <main id="main-section" style="display:none;">
 
-<!-- FIXTURES -->
-<section class="hero is-danger">
-<div class="hero-body" id="topOfFixtures">
-<div class="container">
-<h1 class="title is-2 is-spaced">Fixtures</h1>
-<h2 class="subtitle is-3">the next ten games...</h2>
-<div id="fixtures"></div>  
-</div>
-</div>
-</div>
-</section>
+        <!-- BUTTON SELECTION JUMPS/MOVES TO PARTS OF SCREEN -->
+        <section role="league selection section" class="hero is-light">
+            <div class="hero-body" id="topOfOptions">
+                <div class="container">
+                    <a href="#topOfTable" class="button is-large is-success is-spaced tabBtn">Table</a>
+                    <a href="#topOfNews" class="button is-large is-warning  tabBtn">News</a>
+                    <a href="#topOfFixtures" class="button is-large is-danger tabBtn">Fixtures</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- START OF TABLE -->
+        <section role="league table" class="hero is-success">
+            <div class="hero-body" id="topOfTable">
+                <div class="container">
+                    <h1 class="title is-2 is-spaced" id="headingTitles">Table</h1>
+                    <table class="table is-bordered is-narrow is-hoverable is-striped">
+                        <thead>
+                            <tr>
+                                <th><abbr title="Position">Pos</abbr></th>
+                                <th><abbr title="Team">Team</abbr></th>
+                                <th><abbr title="Played">Pld</abbr></th>
+                                <th class="wldColRm"><abbr title="Won">W</abbr></th>
+                                <th class="wldColRm"><abbr title="Drawn">D</abbr></th>
+                                <th class="wldColRm"><abbr title="Lost">L</abbr></th>
+                                <th class="colRm"><abbr title="Goals for">GF</abbr></th>
+                                <th class="colRm"><abbr title="Goals against">GA</abbr></th>
+                                <th class="colRm"><abbr title="Goal difference">GD</abbr></th>
+                                <th><abbr title="Points">Pts</abbr></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th><abbr title="Position">Pos</abbr></th>
+                                <th>Team</th>
+                                <th><abbr title="Played">Pld</abbr></th>
+                                <th class="wldColRm"><abbr title="Won">W</abbr></th>
+                                <th class="wldColRm"><abbr title="Drawn">D</abbr></th>
+                                <th class="wldColRm"><abbr title="Lost">L</abbr></th>
+                                <th class="colRm"><abbr title="Goals for">GF</abbr></th>
+                                <th class="colRm"><abbr title="Goals against">GA</abbr></th>
+                                <th class="colRm"><abbr title="Goal difference">GD</abbr></th>
+                                <th><abbr title="Points">Pts</abbr></th>
+                            </tr>
+                        </tfoot>
+                        <tbody id="results">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
 
 
-<!-- END OF MAIN SECTION -->
-</main>
+        <!-- NEWS -->
+        <section role="returned news stories" class="hero is-warning">
+            <div class="hero-body" id="topOfNews">
+                <div class="container">
+                    <h1 class="title is-2 is-spaced">Latest new stories</h1>
+                    <div id="news">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-<div class="content has-text-centered">
-<p>
-<strong>JQuery API capstone project</strong>
-<br><br>
-Fetching nested data from two RESTful APIs.  Displaying responsively with <a target="_blank" href="https://bulma.io/">Bulma</a>. 
-<br><br>
-<strong>created by Adam Duggan</strong>
-<br>
-</p>
-<a target="_blank" href="https://github.com/AdamJDuggan" class="button is-large">
-<span class="icon is-medium">
-<i class="fab fa-github"></i>
-</span>
-</a>
-<a href="mailto:adamduggan17@gmail.com" class="button is-large">
-<span class="icon is-medium">
-<i class="item fa fa-envelope"></i>
-</span>
-</a>
-</div>
-</footer>
+        <!-- FIXTURES -->
+        <section role="upcoming fixtures" class="hero is-danger">
+            <div class="hero-body" id="topOfFixtures">
+                <div class="container">
+                    <h1 class="title is-2 is-spaced">Fixtures</h1>
+                    <h2 class="subtitle is-3">the next ten games...</h2>
+                    <div id="fixtures"></div>
+                </div>
+            </div>
+            </div>
+        </section>
 
-<script src="index2.js"></script>
+
+        <!-- END OF MAIN SECTION -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer role="footer" class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>JQuery API capstone project</strong>
+                <br><br>
+                Fetching nested data from two RESTful APIs. Displaying responsively with <a target="_blank" href="https://bulma.io/">Bulma</a>.
+                <br><br>
+                <strong>created by Adam Duggan</strong>
+                <br>
+            </p>
+            <a target="_blank" href="https://github.com/AdamJDuggan" class="button is-large">
+                <span class="icon is-medium">
+                    <i class="fab fa-github"></i>
+                </span>
+            </a>
+            <a href="mailto:adamduggan17@gmail.com" class="button is-large">
+                <span class="icon is-medium">
+                    <i class="item fa fa-envelope"></i>
+                </span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="index2.js"></script>
 </body>
+
 </html>
-
-
