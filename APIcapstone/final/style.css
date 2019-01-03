@@ -15,3 +15,28 @@
 #headingTitles{
     margin-bottom: 30px;
 }
+
+img{
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.leagueBtn{
+    border: none;
+    background-color: none;
+}
+
+.leagueBtn:focus { outline: none; }
+
+.tabBtn{margin: 10px;}
+
+
+@media only screen and (max-width: 540px){
+    .colRm{display:none;}
+}
+
+@media only screen and (max-width: 400px){
+    .wldColRm{display:none;}
+}
+
+#team{display:none;};

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hello Bulma!</title>
+<title>Football stat tracker</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 <link rel="stylesheet" href="style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -12,14 +12,14 @@
 <body>
 
 <!-- JUMBOTRON HEADER -->
-<section id="jumbo" class="hero is-primary is-bold is-large">
+<section role="banner" id="jumbo" class="hero is-primary is-bold is-large">
 <div class="hero-body">
 <div class="container has-text-centered">
-<h1 class="title is-center is-1">
-Football League tracker 
+<h1 class="title is-1 is-spaced">
+FOOTBALL LATEST
 </h1>
-<h2 class="subtitle is3">
-Standings, news and fixtures for Europes top domestic leagues 
+<h2 class="subtitle is-3 is-spaced">
+Uptodate standings, news and fixtures for Europe's top domestic leagues 
 </h2>
 </div>
 </div>
@@ -27,19 +27,18 @@ Standings, news and fixtures for Europes top domestic leagues
 
 
 <!-- LEAGUE BUTTONS -->
-<section class="hero is-info">
+<section role="select league" class="hero is-info">
 <div class="hero-body">
 <div class="container">
-<h1 class="title is-2 is-spaced ">
+<h2 class="title is-2 is-spaced ">
 Choose a league
-</h1>
+</h2>
 <div class="buttons are-large" id="leagueBtns">
-<button type="button" data-league="PL" data-news="premier-league" class="button leagueBtn"><a href="#topOfOptions">Premier League</a></button>
+<button type="button" data-league="PL" data-news="premier-league" class="button leagueBtn">Premier League</button>
 <button type="button" data-league="ELC" data-news="english-football-league" class="button leagueBtn">English Football League</button>
 <button type="button" data-league="PD" data-news="la-liga" class="button leagueBtn">La Liga</button>
 <button type="button" data-league="SA" data-news="serie-a" class="button leagueBtn">Seria A</button>
 <button type="button" data-league="BL1" data-news="bundesliga" class="button leagueBtn">Bundesliga</button>
-
 
 </div>
 </div>
@@ -49,15 +48,13 @@ Choose a league
 <!-- MAIN SECTION WHICH DISPLAYS RETURNED CONTENT -->
 <main id="main-section" style="display:none;">
 
-
+<!-- JUMP TO PARTS OF SCREEN -->
 <section class="hero is-light">
 <div class="hero-body" id="topOfOptions" >
 <div class="container">
 <a href="#topOfTable" class="button is-large is-success is-spaced tabBtn">Table</a>
 <a href="#topOfNews" class="button is-large is-warning  tabBtn">News</a>
 <a href="#topOfFixtures" class="button is-large is-danger tabBtn">Fixtures</a>
-
-
 </div>
 </div>
 </section>    
@@ -67,20 +64,18 @@ Choose a league
 <div class="hero-body" id="topOfTable">
 <div class="container">
 <h1 class="title is-2 is-spaced" id="headingTitles">Table</h1>
-
-</div>
-<table class="table is-bordered is-narrow is-hoverable is-striped is-fullwidth">
+<table class="table is-bordered is-narrow is-hoverable is-striped">
 <thead>
 <tr>
 <th><abbr title="Position">Pos</abbr></th>
-<th>Team</th>
+<th><abbr title="Team">Team</abbr></th>
 <th><abbr title="Played">Pld</abbr></th>
-<th><abbr title="Won">W</abbr></th>
-<th><abbr title="Drawn">D</abbr></th>
-<th><abbr title="Lost">L</abbr></th>
-<th><abbr title="Goals for">GF</abbr></th>
-<th><abbr title="Goals against">GA</abbr></th>
-<th><abbr title="Goal difference">GD</abbr></th>
+<th class="wldColRm"><abbr title="Won">W</abbr></th>
+<th class="wldColRm"><abbr title="Drawn">D</abbr></th>
+<th class="wldColRm"><abbr title="Lost">L</abbr></th>
+<th class="colRm"><abbr title="Goals for">GF</abbr></th>
+<th class="colRm"><abbr title="Goals against">GA</abbr></th>
+<th class="colRm"><abbr title="Goal difference">GD</abbr></th>
 <th><abbr title="Points">Pts</abbr></th>
 </tr>
 </thead>
@@ -89,12 +84,12 @@ Choose a league
 <th><abbr title="Position">Pos</abbr></th>
 <th>Team</th>
 <th><abbr title="Played">Pld</abbr></th>
-<th><abbr title="Won">W</abbr></th>
-<th><abbr title="Drawn">D</abbr></th>
-<th><abbr title="Lost">L</abbr></th>
-<th><abbr title="Goals for">GF</abbr></th>
-<th><abbr title="Goals against">GA</abbr></th>
-<th><abbr title="Goal difference">GD</abbr></th>
+<th class="wldColRm"><abbr title="Won">W</abbr></th>
+<th class="wldColRm"><abbr title="Drawn">D</abbr></th>
+<th class="wldColRm"><abbr title="Lost">L</abbr></th>
+<th class="colRm"><abbr title="Goals for">GF</abbr></th>
+<th class="colRm"><abbr title="Goals against">GA</abbr></th>
+<th class="colRm"><abbr title="Goal difference">GD</abbr></th>
 <th><abbr title="Points">Pts</abbr></th>
 </tr>
 </tfoot>
@@ -103,8 +98,8 @@ Choose a league
 </tbody>
 </table>
 </div>
+</div>
 </section>
-
 
 
 <!-- NEWS -->
@@ -118,13 +113,13 @@ Choose a league
 </div>
 </section>
 
-
 <!-- FIXTURES -->
 <section class="hero is-danger">
 <div class="hero-body" id="topOfFixtures">
 <div class="container">
-<h1 class="title is-2 is-spaced">Fixtures </h1>
-<div id="fixtures">
+<h1 class="title is-2 is-spaced">Fixtures</h1>
+<h2 class="subtitle is-3">the next ten games...</h2>
+<div id="fixtures"></div>  
 </div>
 </div>
 </div>
@@ -140,7 +135,7 @@ Choose a league
 <p>
 <strong>JQuery API capstone project</strong>
 <br><br>
-Fetching nested data from two RESTful APIs.  Displaying responsively with Bulma. 
+Fetching nested data from two RESTful APIs.  Displaying responsively with <a target="_blank" href="https://bulma.io/">Bulma</a>. 
 <br><br>
 <strong>created by Adam Duggan</strong>
 <br>
@@ -150,20 +145,13 @@ Fetching nested data from two RESTful APIs.  Displaying responsively with Bulma.
 <i class="fab fa-github"></i>
 </span>
 </a>
-<a class="button is-large">
+<a href="mailto:adamduggan17@gmail.com" class="button is-large">
 <span class="icon is-medium">
 <i class="item fa fa-envelope"></i>
 </span>
 </a>
-<a class="button is-large">
-<span class="icon is-medium">
-<i class="item fa fa-phone"></i>
-</span>
-</a>
-
 </div>
 </footer>
-
 
 <script src="index2.js"></script>
 </body>
